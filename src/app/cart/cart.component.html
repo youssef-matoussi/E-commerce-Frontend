@@ -1,0 +1,37 @@
+<div class="cart-panel" [ngClass]="{'open': isCartOpen}">
+  <div class="cart-content">
+    <button class="close-cart" (click)="cartClosed.emit()">×</button>
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <img [src]="item.product.imageUrl[0]" [alt]="item.product.name" class="cart-item-image">
+        <div class="cart-item-details">
+          <h3>{{ item.product.name }}</h3>
+          <p> <strong>Réf:</strong> {{ item.reference }}</p>
+          <p> <strong>Size:</strong> {{ item.size }}</p>
+          <p>
+            <strong>Quantity:</strong>
+            <input type="number"
+                   [(ngModel)]="item.quantity"
+                   (change)="updateQuantity(item, item.quantity)"
+                   min="1"
+                   class="quantity-input">
+          </p>
+          <p> <strong>Price: </strong>{{ item.product.price | currency }}</p>
+          <button (click)="removeItem(item)">Remove</button>
+        </div>
+      </div>
+      <div class="cart-total">
+        <strong>Total:</strong> {{ getTotal() | currency }}
+      </div>
+    </div>
+    <ng-template #emptyCart>
+      <div class="cart-icon">
+        <img src="assets/empty-cart.png" alt="Empty Cart">
+      </div>
+      <p class="empty-cart-text">
+        <strong>Panier vide</strong><br>
+        Ton panier est encore vide, découvre tout ce que nous avons pour toi.
+      </p>
+    </ng-template>
+  </div>
+</div>

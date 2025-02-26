@@ -1,0 +1,117 @@
+/* Hide the cart panel by default, sliding it offscreen */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Offscreen by default */
+  width: 350px; /* Adjust as needed */
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 9999;
+}
+
+/* When the cart panel is open, slide it in from the right */
+.cart-panel.open {
+  right: 0; /* Slide it in */
+}
+
+.cart-content {
+  padding: 20px;
+  max-height: 90vh; /* Set a maximum height for the cart content */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.close-cart {
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #333;
+}
+
+/* Cart Icon */
+/* .cart-panel .cart-icon {
+  width: 40%;
+  text-align: center;
+} */
+
+.empty-cart-text {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.cart-panel .cart-icon img {
+  width: 80%;
+  display: block; /* Removes any extra space below the image */
+  margin: 0 auto; /* Centers the image horizontally */  }
+
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .cart-item-details {
+    flex: 1;
+  }
+  
+  .cart-item-details h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .cart-item-details p {
+    margin: 5px 0;
+  }
+  
+  .cart-item-details button {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .cart-total {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .quantity-input {
+    width: 30px;
+    padding: 2px;
+    text-align: center;
+  }
+
+  /* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+.cart-content::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.cart-content::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track */
+}
+
+.cart-content::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.cart-content::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar on hover */
+}

@@ -1,0 +1,116 @@
+.signup-panel {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Offscreen by default */
+    width: 350px; /* Adjust as needed */
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 10000;
+  }
+  
+  .signup-panel.open {
+    right: 0; /* Slide it in */
+  }
+  
+  .signup-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 90vh; /* Set a maximum height for the content */
+    align-items: center;
+  justify-content: center;
+
+  }
+  
+  .close-signup {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    align-self: flex-start;
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    margin-top: auto;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .btn-signup {
+    padding: 10px;
+    width: 40%;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 4rem;
+  }
+  
+  .btn-signup:hover {
+    background-color: #494949;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  /* Success message styling */
+  .success-message {
+    color: green;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 100px; /* Adjust as needed */
+
+  }
+
+  /* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+.signup-content::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .signup-content::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+  }
+  
+  .signup-content::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .signup-content::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar on hover */
+  }

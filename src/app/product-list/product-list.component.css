@@ -1,0 +1,150 @@
+/* product-list.component.css */
+.product-list-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);  /* Default to 4 columns */
+    grid-auto-rows: 1fr;  /* Ensure all items have equal height */
+  }
+  
+  .product-card {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 130%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .product-name {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .product-description {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+  }
+  
+  .product-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .add-to-cart {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #555;
+  }
+
+  /* product-list.component.css */
+.loading-spinner {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  /* product-list.component.css */
+.image-carousel {
+    width: 100%;
+    height: 60%; /* Set a fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Ensure buttons position correctly */
+    overflow: hidden; /* Prevents image overflow */
+    cursor: pointer;
+  }
+  
+  
+  .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  opacity: 0;  /* Initially hidden */
+  transition: opacity 0.3s ease;  /* Smooth transition for opacity */
+  }
+  
+  .product-card:hover .carousel-btn {
+    opacity: 1;  /* Make buttons visible on hover */
+  }
+
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  
+  .carousel-btn:hover {
+    background-color: transparent;
+  }
+  
+
+  .filter{
+    font-size:150%;
+  }
+
+  .filter-container {
+    text-align: right;
+    margin-top: 10px;
+  }
+  
+  .filter-container button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .filter-container button:hover {
+    background-color: #0056b3;
+  }

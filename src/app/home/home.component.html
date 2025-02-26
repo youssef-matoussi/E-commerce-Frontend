@@ -1,0 +1,152 @@
+<!-- <header [class.expanded]="expandedCategory !== null" (mouseleave)="onHeaderMouseLeave($event)"> -->
+<!-- <header [class.expanded]="expandedCategory !== null" >
+    <nav>
+      <ul class="main-nav">
+        <li *ngFor="let category of categories" class="nav-item">
+          <a href="#" (click)="onCategoryClick($event, category.name)">
+            {{ category.name }}
+            <span *ngIf="category.subcategories.length > 0" class="indicator">⏷</span>
+          </a>
+        </li>
+      </ul>
+  
+      <div *ngIf="expandedCategory !== null" class="subcategories-panel">
+        <div class="subcategories-container">
+          <div class="subcategories-column">
+            <ul>
+                <li *ngFor="let subcategory of getCurrentCategory().subcategories">
+                    <a href="#" 
+                       (click)="onSubcategoryClick($event, subcategory.name, getCurrentCategory().name)">
+                      {{ subcategory.name }}
+                      <span *ngIf="subcategory.subcategories.length > 0" class="indicator">→</span>
+                    </a>
+                  </li>
+            </ul>
+          </div>
+  
+          <div *ngIf="clickedSubcategory !== null" class="sub-subcategories-column">
+            <div class="sub-subcategories-grid">
+                <div *ngFor="let group of subcategoryGroups" class="category-group">
+                  <h4>{{ group.title }}</h4>
+                  <ul>
+                    <li *ngFor="let item of group.items">
+                      <a href="#" (click)="onSubSubcategoryClick($event, item)">
+                        {{ item }}
+                      </a>
+                    </li>
+                  </ul>
+              
+                </div>
+              </div>
+              
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+  
+  
+    <a href="/home" class="logo">ETHKL</a>
+  
+    <div class="header-icons">
+      <a href="#" class="login">Login</a>
+      <a href="#" class="cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+    </div>
+  </header> -->
+  
+  <section class="hero">
+    <h1>Sustainable. Beautiful. Ethical.</h1>
+    <a href="#" class="cta">Shop Now</a>
+  
+    <div class="image-grid">
+      <div class="grid-item">
+        <img src="assets/women-fashion.jpg" alt="Women's Fashion">
+        <a href="#" class="shop-link">Women</a>
+      </div>
+      <div class="grid-item">
+        <img src="assets/men-fashion.jpg" alt="Men's Fashion">
+        <a href="#" class="shop-link">Men</a>
+      </div>
+      <div class="grid-item">
+        <img src="assets/Kid.jpg" alt="Kids' Fashion">
+        <a href="#" class="shop-link">Kids</a>
+      </div>
+    </div>
+    <br>
+  
+    <h1>New Products</h1>
+    <div class="swiper-container">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/men-fashion.jpg" alt="Product 1"></div>
+          <div class="swiper-slide"><img src="assets/women-fashion.jpg" alt="Product 2"></div>
+          <div class="swiper-slide"><img src="assets/kids.jpg" alt="Product 3"></div>
+          <div class="swiper-slide"><img src="assets/Kid.jpg" alt="Product 4"></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <button class="cta"> See All</button>
+  </section>
+
+
+
+  <!-- <header>
+    <div class="logo">ETHKL</div>
+    <nav>
+      <ul>
+        ⏶
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <a href="#" class="login">Login</a>
+      <a href="#" class="cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+    </div>
+  </header>
+  
+  <section class="hero">
+  
+    <div class="image-grid">
+      <div class="grid-item">
+        <img src="assets/women-fashion.jpg" alt="Women's Fashion">
+        <a href="#" class="shop-link">Women</a>
+      </div>
+      <div class="grid-item">
+        <img src="assets/men-fashion.jpg" alt="Men's Fashion">
+        <a href="#" class="shop-link">Men</a>
+      </div>
+      <div class="grid-item">
+        <img src="assets/Kid.jpg" alt="Kids' Fashion">
+        <a href="#" class="shop-link">Kids</a>
+      </div>
+    </div>
+    <br>
+  
+    <h1>New Products</h1>
+    <div class="swiper-container">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/men-fashion.jpg" alt="Product 1"></div>
+          <div class="swiper-slide"><img src="assets/women-fashion.jpg" alt="Product 2"></div>
+          <div class="swiper-slide"><img src="assets/kids.jpg" alt="Product 3"></div>
+          <div class="swiper-slide"><img src="assets/Kid.jpg" alt="Product 4"></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <button class="cta">See All</button>
+  </section>
+   -->

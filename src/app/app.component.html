@@ -1,0 +1,14 @@
+<!-- <app-navbar></app-navbar>  This ensures the Navbar is always visible -->
+<app-navbar (cartToggled)="onCartToggled($event)" (loginToggled)="onLoginToggled()" (signupToggled)="onSignupToggled()"></app-navbar>
+<app-cart [isCartOpen]="isCartOpen" (cartClosed)="onCartClosed()"></app-cart>
+<app-login [isLoginOpen]="isLoginOpen" (loginClosed)="onLoginClosed()" (signupToggled)="onSignupToggled()" (forgotPasswordToggled)="onForgotPasswordToggled()"></app-login>
+<app-signup [isSignupOpen]="isSignupOpen" (signupClosed)="onSignupClosed()" (loginToggled)="onLoginToggled()"></app-signup>
+<app-forgot-password [isForgotPasswordOpen]="isForgotPasswordOpen" (forgotPasswordClosed)="onForgotPasswordClosed()" (loginToggled)="onLoginToggled()"></app-forgot-password>
+<app-forgot-password
+  [isForgotPasswordOpen]="isForgotPasswordOpen"
+  (forgotPasswordClosed)="onForgotPasswordClosed()"
+  (loginToggled)="onLoginToggled()"
+  (openLoginPanel)="openLoginPanel()">
+></app-forgot-password><div class="container">
+  <router-outlet></router-outlet>  <!-- This loads the current route's component -->
+</div>

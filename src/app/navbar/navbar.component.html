@@ -1,0 +1,86 @@
+<!-- <header [class.expanded]="expandedCategory !== null" (mouseleave)="onHeaderMouseLeave($event)"> -->
+    <nav>
+        <header [class.expanded]="expandedCategory !== null" >
+            <!-- Navigation Links -->
+            <nav>
+              <ul class="main-nav">
+                <li *ngFor="let category of categories" class="nav-item">
+                  <a href="#" (click)="onCategoryClick($event, category.name)">
+                    {{ category.name }}
+                    <span *ngIf="category.subcategories.length > 0" class="indicator">⏷</span>
+                  </a>
+                </li>
+              </ul>
+          
+              <!-- Subcategories Panel -->
+              <div *ngIf="expandedCategory !== null" class="subcategories-panel">
+                <div class="subcategories-container">
+                  <!-- Subcategories Column -->
+                  <div class="subcategories-column">
+                    <ul>
+                        <li *ngFor="let subcategory of getCurrentCategory().subcategories">
+                            <a href="#" 
+                               (click)="onSubcategoryClick($event, subcategory.name, getCurrentCategory().name)">
+                              {{ subcategory.name }}
+                              <span *ngIf="subcategory.subcategories.length > 0" class="indicator">→</span>
+                            </a>
+                          </li>
+                    </ul>
+                  </div>
+          
+                  <!-- Sub-subcategories Grid (Shows on subcategory click) -->
+                  <div *ngIf="clickedSubcategory !== null" class="sub-subcategories-column">
+                    <div class="sub-subcategories-grid">
+                        <div *ngFor="let group of subcategoryGroups" class="category-group">
+                          <h4>{{ group.title }}</h4>
+                          <ul>
+                            <li *ngFor="let item of group.items">
+                              <a href="#" (click)="onSubSubcategoryClick($event, item)">
+                                {{ item }}
+                              </a>
+                            </li>
+                          </ul>
+                      
+                        </div>
+                      </div>
+                      
+                  </div>
+                </div>
+              </div>
+            </nav>
+          
+          
+          
+            <a href="/home" class="logo">ETHKL</a>
+          
+            <div class="header-icons">
+              <a *ngIf="!isLoggedIn" href="#" class="login" (click)="toggleLoginPanel($event)">Login</a>
+
+              <!-- User Icon (Visible when user is logged in) -->
+              <div *ngIf="isLoggedIn" class="user-dropdown">
+                <a href="#" class="user-icon" (click)="toggleUserDropdown($event)">
+                  <i class="fas fa-user"></i>
+                </a>
+          
+                <!-- Dropdown Panel -->
+                <div class="dropdown-panel" [ngClass]="{'show': isDropdownOpen}">
+                  <div class="user-info">
+                    <p>{{ user?.nom }} {{ user?.prenom }}</p>
+                  </div>
+                  <a href="#" class="dropdown-item" (click)="navigateToProfile()">Profil</a>
+                  <a href="#" class="dropdown-item" (click)="navigateToOrders()">My Orders</a>
+                  <a href="#" class="dropdown-item" (click)="logout()">Logout</a>
+                </div>
+              </div>
+              
+              <a href="#" class="cart" (click)="toggleCartPanel($event)">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span *ngIf="cartItemCount > 0" class="cart-notification">{{ cartItemCount }}</span>
+
+                </a>
+            </div>
+              
+              
+             
+          </header>
+    </nav>

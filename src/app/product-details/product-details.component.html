@@ -1,0 +1,42 @@
+<div class="product-details-container">
+    <!-- Left Side: Image Gallery -->
+    <div class="product-image-container">
+      <div class="image-gallery">
+        <img *ngFor="let image of product?.imageUrl?.slice(0, 4)" 
+             [src]="image" 
+             [alt]="product?.name" 
+             class="thumbnail-image" />
+      </div>
+    </div>
+  
+    <!-- Right Side: Product Info -->
+    <div class="product-info-container">
+      <h2>{{ product?.name }}</h2>
+      <p class="product-description">{{ product?.description }}</p>
+      <p class="product-description"><span style="color: black;">Reference:</span> {{ product?.reference }}</p>
+      <p class="product-price">Price: {{ product?.price | currency }}</p>
+  
+      <!-- Sizes -->
+      <div class="size-options">
+        <label>Available Sizes:</label>
+        <div class="size-buttons">
+          <button *ngFor="let size of availableSizes"
+                  [ngClass]="{'disabled-size': size.disabled, 'selected-size': selectedSize === size.name}"
+                  (click)="selectSize(size.name)">
+            {{ size.name }}
+          </button>
+        </div>
+        <!-- Error message for size selection -->
+      </div>
+      <p *ngIf="showSizeError" class="size-error">Please select a size before adding to cart.</p>
+
+      <!-- Color Display -->
+      <div class="product-colors">
+        <label>Color:</label>
+        <span class="color-indicator" [ngStyle]="{'background-color': color}"></span>
+      </div>
+  
+      <!-- Add to Cart Button -->
+      <button class="add-to-cart" (click)="addToCart()">Add to Cart</button>
+    </div>
+  </div>

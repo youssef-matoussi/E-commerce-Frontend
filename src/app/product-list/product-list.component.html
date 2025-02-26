@@ -1,0 +1,27 @@
+<div class="product-list-container">
+    <div class="product-grid" [ngStyle]="gridStyle">
+      <div *ngFor="let product of products" class="product-card">
+        <div class="image-carousel" (click)="viewProductDetails(product.reference)">
+          <img 
+            [src]="product.imageUrl?.[currentImageIndex[product.id]]" 
+            [alt]="product.name" 
+            class="product-image">
+          
+          <button (click)="prevImage(product)" class="carousel-btn prev-btn">&lt;</button>
+          
+          <button (click)="nextImage(product)" class="carousel-btn next-btn">&gt;</button>
+        </div>
+  
+        <h3 class="product-name">{{ product.name }}</h3>
+        <p class="product-description">{{ product.description }}</p>
+        <p class="product-description">{{ product.reference }}</p>
+        <p class="product-price">Price: {{ product.price | currency }}</p>
+        <!-- Removed the "View Details" button as the image itself is clickable now -->
+      </div>
+    </div>
+  
+    <div *ngIf="products.length === 0" class="loading-spinner">
+      <p>Loading products...</p>
+    </div>
+  </div>
+  
