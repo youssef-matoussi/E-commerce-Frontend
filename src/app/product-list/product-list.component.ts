@@ -38,7 +38,8 @@ export class ProductListComponent implements OnInit {
   }
 
   fetchProducts() {
-    const url = `http://localhost:3000/api/products/${this.gender}/${this.category}/${this.subcategory}`;
+    // const url = `http://localhost:3000/api/products/${this.gender}/${this.category}/${this.subcategory}`;
+    const url = `https://e-commerce-backend-a46t.onrender.com/api/products/${this.gender}/${this.category}/${this.subcategory}`;
     this.http.get<any[]>(url).subscribe(
       (products) => {
         // Map through products to handle imageUrl array and initialize currentImageIndex

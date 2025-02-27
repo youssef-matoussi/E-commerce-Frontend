@@ -43,7 +43,8 @@ export class ProductDetailsComponent implements OnInit {
 
   fetchProductDetails() {
     const encodedReference = encodeURIComponent(this.reference);
-    const url = `http://localhost:3000/api/products/${this.gender}/${this.category}/${this.subcategory}/${encodedReference}`;
+    // const url = `http://localhost:3000/api/products/${this.gender}/${this.category}/${this.subcategory}/${encodedReference}`;
+    const url = `https://e-commerce-backend-a46t.onrender.com/api/products/${this.gender}/${this.category}/${this.subcategory}/${encodedReference}`;
 
     this.http.get<any>(url).subscribe(
       (product) => {

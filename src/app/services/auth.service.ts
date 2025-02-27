@@ -8,7 +8,8 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://192.168.0.100:3000/api'; // Replace with your backend API URL
+  // private apiUrl = 'http://192.168.0.100:3000/api'; // Replace with your backend API URL
+  private apiUrl = 'https://e-commerce-backend-a46t.onrender.com/api'; // Replace with your backend API URL
 
   // BehaviorSubject to track login state and user data
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.hasToken());
