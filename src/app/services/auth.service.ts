@@ -3,13 +3,17 @@ import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   // private apiUrl = 'http://192.168.0.100:3000/api'; // Replace with your backend API URL
-  private apiUrl = 'https://e-commerce-backend-a46t.onrender.com/api'; // Replace with your backend API URL
+  // private apiUrl = 'https://e-commerce-backend-a46t.onrender.com/api'; // Replace with your backend API URL
+  private apiUrl = environment.apiUrl;
+
 
   // BehaviorSubject to track login state and user data
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.hasToken());

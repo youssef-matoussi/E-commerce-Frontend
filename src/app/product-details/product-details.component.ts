@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CartService } from '../services/cart.service';
+import { environment } from '../../environments/environment';
+
 
 interface ProductSize {
   name: string;
@@ -44,7 +46,8 @@ export class ProductDetailsComponent implements OnInit {
   fetchProductDetails() {
     const encodedReference = encodeURIComponent(this.reference);
     // const url = `http://localhost:3000/api/products/${this.gender}/${this.category}/${this.subcategory}/${encodedReference}`;
-    const url = `https://e-commerce-backend-a46t.onrender.com/api/products/${this.gender}/${this.category}/${this.subcategory}/${encodedReference}`;
+    // const url = `https://e-commerce-backend-a46t.onrender.com/api/products/${this.gender}/${this.category}/${this.subcategory}/${encodedReference}`;
+    const url = `${environment.apiUrl}/api/products/${this.gender}/${this.category}/${this.subcategory}/${encodedReference}`;
 
     this.http.get<any>(url).subscribe(
       (product) => {
